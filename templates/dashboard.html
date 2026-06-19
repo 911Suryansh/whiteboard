@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Whiteboard Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+
+    <!-- Glow Background (same as landing page) -->
+    <div class="glow glow1"></div>
+    <div class="glow glow2"></div>
+
+    <div class="container">
+
+        <h1>Collaborative Whiteboard</h1>
+
+        <div class="btn-group">
+            <button class="primary-btn" onclick="showCreateForm()">Create Room</button>
+            <button class="secondary-btn" onclick="showJoinForm()">Join Room</button>
+        </div>
+
+        <div id="roomForm" class="card hidden">
+            <h3 id="formTitle"></h3>
+
+            <input type="text" id="username" placeholder="Enter your name">
+            <input type="text" id="roomInput" placeholder="">
+
+            <button class="primary-btn full" onclick="submitForm()">Continue</button>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+</body>
+</html>

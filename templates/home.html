@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhiteboardX | Collaborative Whiteboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+
+    <!-- Background Effects -->
+    <div class="glow glow1"></div>
+    <div class="glow glow2"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            WhiteboardX
+        </div>
+
+        <button id="navBtn" class="nav-btn">
+            Get Started
+        </button>
+
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="badge">
+                Full Stack Flask + Socket.IO Project
+            </span>
+
+            <h1>
+                Build.
+                Brainstorm.
+                <span>Collaborate.</span>
+            </h1>
+
+            <p>
+                A room-based collaborative whiteboard platform engineered
+                with Flask, Socket.IO, MySQL and modern web technologies.
+                Create rooms, draw together in real-time, save your work
+                and share ideas seamlessly.
+            </p>
+
+            <div class="hero-buttons">
+                <button id="heroBtn" class="primary-btn">
+                    Get Started
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Quick Features -->
+    <section class="feature-strip">
+
+        <div>⚡ Real-Time Sync</div>
+        <div>🔒 Room Isolation</div>
+        <div>💾 Board Persistence</div>
+        <div>🖼 PNG & JSON Export</div>
+
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+
+        <h2>Core Features</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>⚡ Real-Time Collaboration</h3>
+                <p>
+                    Multiple users can collaborate simultaneously
+                    using WebSocket communication powered by Flask-SocketIO.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🏠 Room Based Architecture</h3>
+                <p>
+                    Dedicated room isolation ensures secure and
+                    independent collaboration sessions.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>💾 MySQL Persistence</h3>
+                <p>
+                    Save and restore whiteboard state using a
+                    robust relational database backend.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🖼 Export Tools</h3>
+                <p>
+                    Download whiteboards as PNG images or JSON
+                    files for future use.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>✏️ Drawing Tools</h3>
+                <p>
+                    Pen and eraser support with synchronized
+                    real-time updates across users.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🚀 Scalable Design</h3>
+                <p>
+                    REST APIs, Socket.IO communication and modular
+                    Flask architecture for future expansion.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <h2>
+            Ready to Collaborate?
+        </h2>
+
+        <p>
+            Launch your dashboard and start creating collaborative rooms.
+        </p>
+
+        <button id="ctaBtn" class="primary-btn">
+            Launch Dashboard
+        </button>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            Collaborative Whiteboard Platform | Real-Time Collaboration using Flask & Socket.IO
+        </p>
+
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+
+</body>
+</html>

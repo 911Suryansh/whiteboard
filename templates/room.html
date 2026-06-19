@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Whiteboard Room</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/room.css') }}">
+
+    <script>
+        const roomId = "{{ room_id }}";
+    </script>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
+</head>
+
+<body>
+
+    <h2>Collaborative Whiteboard</h2>
+
+    <!-- Main Layout -->
+    <div class="container">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+
+            <h3>Online Users</h3>
+
+            <ul id="userList">
+
+            </ul>
+
+        </div>
+
+        <!-- Whiteboard Area -->
+        <div class="board-section">
+
+            <!-- Toolbar -->
+            <div id="toolbar">
+
+                <button onclick="setTool('pen')">
+                    Pen
+                </button>
+
+                <button onclick="setTool('eraser')">
+                    Eraser
+                </button>
+
+                <button onclick="clearCanvas()">
+                    Clear
+                </button>
+
+                <button onclick="saveBoard()">
+                    Save
+                </button>
+
+                <button onclick="downloadPNG()">
+                    Download PNG
+                </button>
+
+                <button onclick="downloadJSON()">
+                    Download JSON
+                </button>
+
+            </div>
+
+            <!-- Canvas -->
+            <canvas id="board"></canvas>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/room.js') }}"></script>
+
+</body>
+
+</html>

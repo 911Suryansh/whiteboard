@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, Segoe UI, sans-serif;
+}
+
+body {
+    background: #050505;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* GRID BACKGROUND (same as landing page) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+
+    background-size: 60px 60px;
+    z-index: -3;
+}
+
+/* GLOW EFFECTS */
+.glow {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(180px);
+    z-index: -2;
+}
+
+.glow1 {
+    width: 600px;
+    height: 600px;
+    background: #2563eb;
+    left: -200px;
+    top: -150px;
+    opacity: .12;
+}
+
+.glow2 {
+    width: 600px;
+    height: 600px;
+    background: #9333ea;
+    right: -200px;
+    bottom: -150px;
+    opacity: .12;
+}
+
+/* CONTAINER */
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+/* TITLE */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+/* BUTTON GROUP */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* PRIMARY BUTTON (same vibe as landing page) */
+.primary-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+
+    box-shadow: 0 0 25px rgba(59,130,246,.25);
+
+    transition: 0.3s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 40px rgba(124,58,237,.35);
+}
+
+/* SECONDARY BUTTON */
+.secondary-btn {
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.1);
+    background: rgba(255,255,255,.03);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.secondary-btn:hover {
+    background: rgba(255,255,255,.08);
+}
+
+/* FORM CARD (glassmorphism) */
+.card {
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.03);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.1);
+
+    background: rgba(0,0,0,.3);
+    color: white;
+
+    outline: none;
+}
+
+input::placeholder {
+    color: #9ca3af;
+}
+
+/* FULL BUTTON */
+.full {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* HIDDEN CLASS */
+.hidden {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+}
