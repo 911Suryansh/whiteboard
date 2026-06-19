@@ -112,119 +112,6 @@ project/
 
 ---
 
-# 🗄️ Database Design
-
-## Rooms Table
-
-```sql
-CREATE TABLE rooms (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    room_code VARCHAR(20) UNIQUE,
-    room_name VARCHAR(255),
-    board LONGTEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-
-## Future Users Table
-
-```sql
-CREATE TABLE users (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(100),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-
-## Future Room Members Table
-
-```sql
-CREATE TABLE room_members (
-    room_id INT,
-    user_id INT
-);
-```
-
----
-
-# 🔌 REST API Endpoints
-
-## Create Room
-
-### Request
-
-```http
-POST /api/rooms
-```
-
-```json
-{
-  "name": "Project Meeting",
-  "username": "Aman"
-}
-```
-
-### Response
-
-```json
-{
-  "room_id": 1,
-  "room_code": "ABCD12"
-}
-```
-
----
-
-## Join Room
-
-### Request
-
-```http
-POST /api/rooms/join
-```
-
-```json
-{
-  "code": "ABCD12",
-  "username": "Rahul"
-}
-```
-
----
-
-## Load Board
-
-### Request
-
-```http
-GET /api/rooms/<room_id>/board
-```
-
-### Response
-
-```json
-{
-  "board": "[...]"
-}
-```
-
----
-
-## Save Board
-
-### Request
-
-```http
-PATCH /api/rooms/<room_id>/board
-```
-
-```json
-{
-  "board": "[...]"
-}
-```
-
----
 
 # ⚡ Socket.IO Events
 
@@ -256,26 +143,7 @@ Triggered when the board is cleared.
 
 Synchronizes board clearing across all connected users.
 
----
 
-## cursor_move (Phase 9)
-
-### Purpose
-
-Tracks and broadcasts live cursor positions.
-
-### Example
-
-```json
-{
-  "room_id": 1,
-  "username": "Aman",
-  "x": 150,
-  "y": 220
-}
-```
-
----
 
 # 🎨 Whiteboard Features
 
@@ -350,16 +218,6 @@ Canvas Updates Instantly
 ## 1. User Presence System
 
 Display active users in a room.
-
-Example:
-
-```text
-🟢 Aman
-🟢 Rahul
-🟢 Priya
-```
-
----
 
 ## 2. Live Cursor Tracking
 
@@ -454,20 +312,7 @@ Future support for:
 * Private rooms
 * Invite-only access
 
----
 
-# 🎯 Future Vision
-
-The long-term goal is to evolve this project into a professional collaborative whiteboard platform inspired by:
-
-* Miro
-* Excalidraw
-* FigJam
-* Microsoft Whiteboard
-
-with production-grade collaboration, presence tracking, advanced drawing tools, and scalable deployment.
-
----
 
 ## 👨‍💻 Author
 
